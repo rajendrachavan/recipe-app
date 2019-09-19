@@ -11,7 +11,9 @@ public class Ingredient {
     private Long id;
     private String description;
     private BigDecimal amount;
-    //private UnitOfMeasure unitOfMeasure;
+
+    @OneToOne(fetch = FetchType.EAGER) //ByDefault for OneToOne-fetchType = Eager.
+    private UnitOfMeasure unitOfMeasure;
 
     @ManyToOne
     private Recipe recipe;
